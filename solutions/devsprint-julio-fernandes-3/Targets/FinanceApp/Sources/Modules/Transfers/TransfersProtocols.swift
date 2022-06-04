@@ -16,7 +16,7 @@ protocol TransfersPresenterProtocol {
     
     func onTapTransfer(value: String)
     func openContactList()
-    func openTransferConfirmation()
+    func openTransferConfirmation(confirmation: ConfirmationEntity)
 }
 
 // MARK: TransfersPresenterDelegate
@@ -44,5 +44,5 @@ protocol TransfersConfiguratorProtocol {
 protocol TransfersRouterProtocol {
     var view: UIViewController? { get set }
     func navigateToContactListModule()
-    func navigateToConfirmationModule()
+    func navigateToConfirmationModule(confirmation: ConfirmationEntity)
 }

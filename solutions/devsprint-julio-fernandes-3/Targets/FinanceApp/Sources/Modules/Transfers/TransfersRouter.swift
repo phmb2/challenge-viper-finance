@@ -17,8 +17,9 @@ final class TransfersRouter: TransfersRouterProtocol {
         view?.present(navigationController, animated: true)
     }
     
-    func navigateToConfirmationModule() {
-        let navigationController = UINavigationController(rootViewController: ConfirmationViewController())
+    func navigateToConfirmationModule(confirmation: ConfirmationEntity) {
+        let viewController = ConfirmationConfigurator.createModule(confirmation: confirmation)
+        let navigationController = UINavigationController(rootViewController: viewController)
         view?.present(navigationController, animated: true)
     }
 }

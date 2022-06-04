@@ -21,8 +21,8 @@ final class TransfersPresenter: TransfersPresenterProtocol {
         router?.navigateToContactListModule()
     }
     
-    func openTransferConfirmation() {
-        router?.navigateToConfirmationModule()
+    func openTransferConfirmation(confirmation: ConfirmationEntity) {
+        router?.navigateToConfirmationModule(confirmation: confirmation)
     }
 }
 

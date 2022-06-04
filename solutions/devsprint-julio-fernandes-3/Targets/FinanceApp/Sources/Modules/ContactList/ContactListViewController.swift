@@ -50,7 +50,6 @@ extension ContactListViewController: UITableViewDelegate {
 
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.dismiss(animated: true)
-        tableView.reloadData()
     }
 }
 
@@ -58,5 +57,6 @@ extension ContactListViewController: UITableViewDelegate {
 extension ContactListViewController: ContactListPresenterDelegate {
     func showData(contactList: [ContactEntity]) {
         self.contactList = contactList
+        contactListView.tableView.reloadData()
     }
 }

@@ -11,7 +11,7 @@ class ContactCellView: UITableViewCell {
    static let cellSize = CGFloat(82)
    static let cellIdentifier = "ContactCellIdentifier"
    
-    private var mainStackView: UIStackView = {
+    private(set) lazy var mainStackView: UIStackView = {
        let stack = UIStackView(frame: .zero)
        stack.translatesAutoresizingMaskIntoConstraints = false
        stack.spacing = 16
@@ -19,7 +19,7 @@ class ContactCellView: UITableViewCell {
        return stack
     }()
 
-    private var labelsStackView: UIStackView = {
+    private(set) lazy var labelsStackView: UIStackView = {
         let stack = UIStackView(frame: .zero)
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
@@ -27,7 +27,7 @@ class ContactCellView: UITableViewCell {
         return stack
     }()
 
-    lazy var avatarImageView: UIImageView = {
+    private(set) lazy var avatarImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.layer.cornerRadius = 25
@@ -35,14 +35,14 @@ class ContactCellView: UITableViewCell {
         return imageView
     }()
 
-    lazy var contactNameLabel: UILabel = {
+    private(set) lazy var contactNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.boldSystemFont(ofSize: 17)
         return label
     }()
 
-    lazy var contactPhoneLabel: UILabel = {
+    private(set) lazy var contactPhoneLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .gray

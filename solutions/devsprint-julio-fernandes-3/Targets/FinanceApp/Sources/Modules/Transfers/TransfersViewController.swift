@@ -46,13 +46,16 @@ extension TransfersViewController: TransferViewDelegate {
     }
 
     func didPressTransferButton() {
-        presenter?.openTransferConfirmation()
+        presenter?.onTapTransfer(value: transferAmount)
     }
 }
 
 // MARK: TransfersPresenterDelegate
 extension TransfersViewController: TransfersPresenterDelegate {
     func showData(transfer: TransfersEntity) {
-        print("Show data")
+        let imageName = transfer.success ? "checkmark.circle.fill" : "x.circle.fill"
+        let message = transfer.success ? "Transfer was sent successfully!" : "Something went wrong!"
+        let confirmation = ConfirmationEntity(success: true, imageName: imageName, message: message)
+        presenter?.openTransferConfirmation(confirmation: confirmation)
     }
 }
